@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="ChordPilot — richer piano chords, voicings, and passing chords.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>ChordPilot</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">PIANO CO-PILOT</div>
+        <h1>ChordPilot</h1>
+        <p>Turn simple progressions into richer ones.</p>
+      </div>
+      <button id="installBtn" class="ghost hidden" type="button">Install</button>
+    </header>
+
+    <section class="card">
+      <label for="progression">Your progression</label>
+      <div class="input-row">
+        <input id="progression" autocomplete="off" value="G, C, D, G" placeholder="G, C, D, G">
+        <button id="generateBtn" class="primary" type="button">Make it Tuff</button>
+      </div>
+      <div class="hint">Use commas or spaces: <b>G, C, D, G</b> or <b>G C D G</b></div>
+    </section>
+
+    <section class="card controls">
+      <div>
+        <label for="style">Style</label>
+        <select id="style">
+          <option value="worship">Worship</option>
+          <option value="gospel" selected>Gospel</option>
+          <option value="rnb">R&B</option>
+          <option value="jazz">Jazz</option>
+          <option value="rich">Rich</option>
+        </select>
+      </div>
+      <div>
+        <label for="level">Level</label>
+        <select id="level">
+          <option value="smooth">Smooth</option>
+          <option value="rich" selected>Rich</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">YOUR RESULT</span>
+          <h2 id="resultTitle">Rich reharmonization</h2>
+        </div>
+        <button id="saveBtn" class="secondary" type="button">♡ Save</button>
+      </div>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SELECT A CHORD</span>
+          <h2 id="selectedName">Gmaj9</h2>
+        </div>
+        <button id="playBtn" class="secondary" type="button">▶ Play</button>
+      </div>
+      <div id="notes" class="notes"></div>
+      <div class="hands">
+        <div><span>LEFT HAND</span><strong id="leftHand">G2</strong></div>
+        <div><span>RIGHT HAND</span><strong id="rightHand">B3 D4 F#4 A4</strong></div>
+      </div>
+      <div id="keyboard" class="keyboard" aria-label="Piano keyboard"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SAVED</span>
+          <h2>Your progressions</h2>
+        </div>
+        <button id="clearSavedBtn" class="text-btn" type="button">Clear</button>
+      </div>
+      <div id="saved" class="saved"></div>
+    </section>
+
+    <footer>ChordPilot V1 · Built for richer piano playing</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
